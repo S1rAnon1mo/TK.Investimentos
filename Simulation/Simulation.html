@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulação Investware</title>
+    <link rel="stylesheet" href="Simulation.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css" />
+
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo"><a href="../Index/Index.html" id="btninvest">Investware</a></label>
+        <ul>
+            <li><a href="../About/About.html">Sobre</a></li>
+            <li><a href="../Education/Education.html">Educação</a></li>
+            <li><a href="../Simulation/Simulation.html">Simular</a></li>
+            <li><a class="active" href="../SingIn/SingIn.html">Entrar</a></li>
+        </ul>
+    </nav>
+
+    <section class="main-text" id="main-form">
+        <p class="title" id="title">Simulador de investimentos</p>
+        <p class="subtitle">Descubra qual a melhor carteira de investimentos para você</p>
+        <!-- <input type="button" value="clica" onclick="conservador()"> -->
+        <!-- <hr class="divisor"> -->
+        <div class="quest" id="quest">
+            <form>
+                <p class="questions">1- Qual o seu objetivo?</p>
+                <div class="quest">
+                    <label for="btnInflacao">
+                        <input type="radio" class="rendimentos" name="rendimentos" id="btnInflacao">
+                        Quero ganhos constantes acima da inflação
+                    </label>
+    
+                    <label for="btnLongoPrazo">
+                        <input type="radio" class="rendimentos" name="rendimentos" id="btnLongoPrazo">
+                        Quero maiores rendimentos a longo prazo
+                    </label>
+    
+                    <label for="btnRiscos">
+                        <input type="radio" class="rendimentos" name="rendimentos" id="btnRiscos">
+                        Aceito riscos para maximizar ganhos
+                    </label>
+                </div>
+                
+
+                <p class="questions">2 - Quanto deseja investir?</p>
+
+                <div class="qtd">
+                    <input type="range" min="1" max="100" value="30" class="slider" id="rangeSlider">
+                    <div class="money" id="money">
+                        R$: ?
+                    </div>
+                </div>
+
+                <p class="questions">3 - Quando pretende resgatar?</p>
+
+                <div class="quest">
+                    <label for="btn1ano">
+                        <input type="radio" class="tempo" name="tempo" id="btn1ano">
+                        Em até 1 ano
+                    </label>
+                    <label for="btn2anos">
+                        <input type="radio" class="tempo" name="tempo" id="btn2anos">
+                        Entre 1 e 2 anos
+                    </label>
+
+                    <label for="btn3anos">
+                        <input type="radio" class="tempo" name="tempo" id="btn3anos">
+                        Mais de 2 anos
+                    </label>
+                </div>
+
+            </form>
+            <div class="envio">
+                <button type="submit" class="btnsimulate" id="simular" onclick="verificar()">Simular</button>
+            </div>            
+        </div>
+    </section>
+    <!-- <section>
+        <div id="valortotal"></div>
+    </section> -->
+
+    <section class="chart" id="chart">
+
+        <div class="simulation-info">
+
+            <div class="chart-container">
+                <canvas id="myChart"></canvas>
+            </div>
+
+            <div class="chart-text" id="chart-text">
+                <div id="categoria"></div>
+                <div id="porcentagem"></div>
+                <div id="valor"></div>
+            </div>
+        </div>
+        <div class="text-chart-info">
+            <div class="subtitle-chart" id="perfilInvest">
+            </div>
+            <div class="btnChart">
+                <p><input type="button" value="Simular novamente" class="simularNovamente" onclick="window.location.href = '../Simulation/Simulation.html'"/></p>
+            </div>
+        </div>
+    </section>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
+    <script src="Simulation.js"></script>
+</body>
+</html>
